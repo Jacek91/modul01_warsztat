@@ -28,6 +28,9 @@
   font-family: "ralewayregular", Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+body {
   width: 100%;
 }
 
@@ -59,12 +62,14 @@ span {
 .menu_list {
   list-style: none;
   text-transform: uppercase;
-  display: flex;
   line-height: 50px;
-  padding-left: 23px;
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 1px;
+  padding-right: 30px;
 }
-/* 
-.menu_list:first-child {            
+
+/* .menu_list li:first-of-type {      - jak pogrubic tylko elementy w nav menu      
     font-family: "ralewaybold";
 } */
 
@@ -101,7 +106,6 @@ span {
   color: black;
 }
 .row {
-  width: 100%;
   justify-content: space-between;
   flex-wrap: 1;
   margin-top: 180px;
@@ -111,9 +115,10 @@ span {
 
 .section1_unicode {
   width: 5%;
-  margin: auto 25px;
+  margin: auto 45px;
   text-align: center;
-  font-size: 32px;
+  font-size: 64px;
+  color: green;
 }
 
 /* .main_image .description {
@@ -144,10 +149,8 @@ span {
 }
 
 .button {
-  width: 150px;
   margin: 25px auto;
-  border: none;
-  border-radius: 25px;
+  width: 200px;
 }
 input {
   text-align: center;
@@ -158,4 +161,96 @@ input {
   text-transform: uppercase;
   background-color: green;
   color: white;
+  width: 200px;
+  font-size: 18px;
+}
+
+.section2_container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.small_box {
+  width: 30%;
+  height: 200px;
+  margin-top: 25px;
+}
+
+.first_photo {
+  height: 200px;
+  background-image: url(../images/box1_img.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.second_photo {
+  height: 200px;
+  background-image: url(../images/box2_img.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.small_box_description {
+  height: 230px;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  margin-right: 30px;
+}
+
+.small_box_description h3 {
+  text-align: left;
+  border-bottom: 8px solid green;
+  display: inline-block;
+  padding: 15px 25px 0 0;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.small_box_description p {
+  text-align: left;
+  line-height: 1.5;
+  padding-left: 15px;
+}
+
+.first_photo_description {
+  background-color: white;
+  height: 50px;
+  opacity: 0.5;
+  font-family: "ralewaybold";
+  margin-top: 130px;
+  padding-top: 10px;
+  padding-left: 120px;
+  padding-right: 161px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
+  display: inline-block;
+}
+
+.first_photo_description h3 {
+  text-align: left;
+  border-bottom: 8px solid green;
+  padding-right: 25px;
+}
+
+/* .h3.onTop { jak zrobic zeby byl tekst nieprzezroczysty na przezroczystym tle
+} */
+
+.second_photo_description {
+  background-color: white;
+  height: 50px;
+  opacity: 0.5;
+  font-family: "ralewaybold";
+  margin-top: 130px;
+  padding-top: 10px;
+  padding-left: 120px;
+  padding-right: 118px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
+  display: inline-block;
+}
+
+.second_photo_description h3 {
+  text-align: left;
+  border-bottom: 8px solid green;
+  padding-right: 25px;
 }
