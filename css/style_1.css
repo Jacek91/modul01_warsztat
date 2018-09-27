@@ -223,9 +223,8 @@ input {
   font-family: "ralewaybold";
   margin-top: 130px;
   padding-top: 10px;
-  padding-left: 165px;
+  padding-left: 114px;
   padding-right: 160px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
-  display: inline-block;
 }
 
 .first_photo_description h3 {
@@ -244,9 +243,8 @@ input {
   font-family: "ralewaybold";
   margin-top: 130px;
   padding-top: 10px;
-  padding-left: 167px;
-  padding-right: 147px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
-  display: inline-block;
+  padding-left: 114px;
+  padding-right: 149px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
 }
 
 .second_photo_description h3 {
@@ -292,32 +290,105 @@ input {
   background-color: white;
 }
 
-.oczko .kolko {
+.kolko {
   width: 50%;
   height: 50%;
   border-radius: 50%;
   background-color: gray;
-  position: absolute;
+  position: absolute; /* dlaczego .kolko jest w srodku .oczko skoro position absolute powinno byc do 1 relative*/
   top: 25%;
   left: 25%;
 }
 
+h2.card_text {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 8%;
+  left: 32%;
+  color: green;
+  font-family: "ralewaybold";
+}
+
 .duze_oczko {
   border: 3px solid gray;
-  width: 25%;
-  height: 25%;
+  width: 30%;
+  height: 23%;
   border-radius: 50%;
-  text-align: center;
   top: 100px;
-  left: calc(50% - 60px);
-  background-color: white;  
-  position: absolute;         /* dopytac o position czemu jak usatwie absolute to pozycjonuje od .oczko*/
+  left: calc(50% - 65px);
+  background-color: white;
+  position: absolute; /* dopytac o position czemu jak usatwie absolute to pozycjonuje od .oczko*/
 }
 
 .duze_oczko p {
-text-align: center;
-margin-top: 35px;
-color: gray;
-font-size: 18px;
-font-family: "ralewaybold";
+  text-align: center;
+  margin-top: 22px;
+  color: gray;
+  font-size: 42px;
+  font-family: "ralewaybold";
+  position: relative;
 }
+
+.duze_oczko p::before {
+  content: "99";
+  position: absolute;
+  font-size: 12px;
+  top: 5px;
+  right: 17px;
+}
+
+.duze_oczko p::after {
+  content: "PLN/MSC";
+  position: absolute;
+  font-size: 12px;
+  top: 50px;
+  right: 25px;
+}
+
+.card1_description {
+  top: 50px;
+  margin-top: 250px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.card1_description p:first-child {
+  background-color: gray;
+  opacity: 0.5;
+}
+
+.card1_description p:last-child {
+  background-color: lightgray;
+  opacity: 0.5; /* jak zrobic zeby tekst pozostal widoczny w 100% */
+}
+
+.card1_button {
+  width: 200px;
+  margin: 110px auto;
+}
+
+.card2 .oczko {
+  border: 3px solid green;
+  background-color: green;
+}
+
+.card2 .kolko {
+  background-color: white;
+}
+
+.card2 .card_text {
+  color: white;
+}
+
+/* .card2_button .card1_button {
+ margin-top: 75px;        /* czemu nie bierze wlasciwosci z card1_button */
+} */
+
+.card.card2 .card_button {
+  margin: 0;
+}
+
+
