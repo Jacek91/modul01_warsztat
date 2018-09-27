@@ -219,7 +219,8 @@ input {
 .first_photo_description {
   background-color: white;
   height: 50px;
-  opacity: 0.5;
+  display: inline-block;
+  opacity: 0.5; /* jak zrobic zeby tekst pozostal widoczny w 100% */
   font-family: "ralewaybold";
   margin-top: 130px;
   padding-top: 10px;
@@ -238,6 +239,7 @@ input {
 
 .second_photo_description {
   background-color: white;
+  display: inline-block;
   height: 50px;
   opacity: 0.5;
   font-family: "ralewaybold";
@@ -279,7 +281,7 @@ input {
 }
 
 .oczko {
-  border: 3px solid gray;
+  border: 1px solid gray;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -347,27 +349,37 @@ h2.card_text {
   right: 25px;
 }
 
-.card1_description {
-  top: 50px;
-  margin-top: 250px;
+.card_description {
+  position: relative;
   text-align: center;
   font-size: 18px;
   line-height: 35px;
+  top: 250px;
 }
 
-.card1_description p:first-child {
+.card_description p:first-child {
   background-color: gray;
-  opacity: 0.5;
 }
 
-.card1_description p:last-child {
+.card_description p:last-child {
   background-color: lightgray;
-  opacity: 0.5; /* jak zrobic zeby tekst pozostal widoczny w 100% */
 }
 
 .card1_button {
-  width: 200px;
-  margin: 110px auto;
+  width: 120px;
+  position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
+  top: 420px;
+  left: calc(50% - 15%);
+}
+
+.card input {
+  width: 120px;
+}
+
+.card2 {
+  background-color: green;
+  z-index: -1;
+  height: 500px;
 }
 
 .card2 .oczko {
@@ -381,14 +393,60 @@ h2.card_text {
 
 .card2 .card_text {
   color: white;
+  left: 102px;
 }
 
-/* .card2_button .card1_button {
- margin-top: 75px;        /* czemu nie bierze wlasciwosci z card1_button */
-} */
-
-.card.card2 .card_button {
-  margin: 0;
+.card2_button {
+  width: 120px;
+  position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
+  top: 420px;
+  left: calc(50% - 15%);
 }
 
+.card2_button input {
+  background-color: white;
+  color: green;
+}
 
+.card2 .duze_oczko p {
+  color: green;
+}
+
+.card2 .duze_oczko {
+  border: 1px solid green;
+}
+
+.card2 .card_description {
+  margin: 0 2px;
+}
+
+.card2 .card_description p:nth-child(2n + 1) {
+  background-color: white;
+}
+
+.card2 .card_description p:nth-child(2n) {
+  background-color: lightgray;
+}
+
+.card3 {
+  height: 500px;
+}
+
+.card3 .duze_oczko p::before {
+  content: "\00221E";
+  font-size: 18px;
+  top: 2px;
+  right: 13px;
+}
+
+.card3 .card_text {
+  left: 102px;
+}
+
+.card3 .card_description p:nth-child(2n + 2) {
+  background-color: lightgray;
+}
+
+.card3 .card_description p:nth-child(2n + 1) {
+  background-color: gray;
+}
