@@ -118,14 +118,23 @@ span {
 }
 .row {
   justify-content: space-between;
+<<<<<<< HEAD
   margin-top: 170px;
+=======
+  margin-top: 180px;
+>>>>>>> 363aa652204ee3851992075b2080c5ac86bbebd7
   display: flex;
   height: 350px;
 }
 
 .section1_unicode {
+<<<<<<< HEAD
   width: 4%;
   margin: 80px 45px;
+=======
+  width: 5%;
+  margin: 60px 45px;
+>>>>>>> 363aa652204ee3851992075b2080c5ac86bbebd7
   text-align: center;
   font-size: 64px;
   color: #26c6b0;
@@ -146,7 +155,7 @@ span {
 
 .description {
   width: 40%;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 2px;
   text-align: center;
   font-size: 12px;
@@ -626,4 +635,8 @@ textarea::placeholder {
 
 .footer_tittle span {
   color: gray;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 363aa652204ee3851992075b2080c5ac86bbebd7
