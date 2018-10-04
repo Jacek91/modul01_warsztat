@@ -24,7 +24,6 @@
 
 * {
   box-sizing: border-box;
-  border: 1px solid red;
   font-family: "ralewayregular", Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -36,10 +35,8 @@ body {
 
 .header_container {
   display: flex;
-  width: 100%;
   background-color: black;
   color: white;
-  flex-wrap: 1;
   height: 50px;
 }
 
@@ -70,9 +67,9 @@ span {
   position: relative;
 }
 
-/* .menu_list li:first-of-type {      - jak pogrubic tylko elementy w nav menu      
-    font-family: "ralewaybold";
-} */
+/* .menu_list li:first-child {
+    font-family: "ralewaybold";           jak pogrubic tylko nazwy o firmie, galeria, kontakt
+}*/
 
 .main_info {
   position: absolute;
@@ -83,6 +80,7 @@ span {
   width: 150px;
   height: 132px;
   text-align: center;
+  display: none;
 }
 .info {
   padding-left: 23px;
@@ -91,13 +89,26 @@ span {
   text-align: left;
   text-transform: capitalize;
 }
-.header_container:after {
-  top: 58px;
-  left: 835px;
+.main_info:before {
+  top: -33px;
+  left: 60px;
   position: absolute;
   content: "\25b2";
   color: black;
   font-size: 25px;
+  display: none;
+}
+
+.menu_list:hover .main_info {    /* jak trafic do pierwszego elementu li "o firmie" w klasie menu_list  */
+  display: block;
+}
+
+.menu_list:hover .main_info:before {
+  display: block;
+}
+
+.main_info li:hover {
+  background-color: #26c6b0;
 }
 
 .section1_container {
@@ -107,29 +118,30 @@ span {
 }
 .row {
   justify-content: space-between;
-  flex-wrap: 1;
-  margin-top: 180px;
+  margin-top: 170px;
   display: flex;
-  height: 300px;
+  height: 350px;
 }
 
 .section1_unicode {
-  width: 5%;
-  margin: auto 45px;
+  width: 4%;
+  margin: 80px 45px;
   text-align: center;
   font-size: 64px;
   color: #26c6b0;
+  height: 350px;
 }
 
 /* .main_image .description {
-  float: left;
+  float: left;             czy szlo by jakos floatem ustawic te elementy obok siebie
 } */
 
 .main_image {
   width: 30%;
   height: 300px;
   background-image: url(../images/black_chair.png);
-  background-position: bottom;
+  background-position: center;
+  background-size: 150%;
 }
 
 .description {
@@ -149,7 +161,7 @@ span {
 }
 
 .button {
-  margin: 25px auto;
+  margin: 30px 25%;
   width: 200px;
 }
 input[type="submit"] {
@@ -163,10 +175,11 @@ input[type="submit"] {
   color: white;
   width: 200px;
   font-size: 18px;
+  margin-left: 0;
 }
 
 .section2_container {
-  width: 100%;
+  width: 1200px;
   height: 300px;
   display: flex;
   justify-content: space-around;
@@ -217,10 +230,9 @@ input[type="submit"] {
 }
 
 .first_photo_description {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   height: 50px;
   display: inline-block;
-  opacity: 0.5; /* jak zrobic zeby tekst pozostal widoczny w 100% */
   font-family: "ralewaybold";
   margin-top: 130px;
   padding-top: 10px;
@@ -235,10 +247,11 @@ input[type="submit"] {
 }
 
 /* .h3.onTop { jak zrobic zeby byl tekst nieprzezroczysty na przezroczystym tle
-} */
+}  jak sie zrobi background tylko na white i opacity to tekst takze jest przezroczysty */
+
 
 .second_photo_description {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   display: inline-block;
   height: 50px;
   opacity: 0.5;
@@ -279,6 +292,7 @@ input[type="submit"] {
   display: inline-block;
   padding-right: 252px;
   text-transform: uppercase;
+  padding-bottom: 5px;
 }
 
 .oczko {
@@ -316,11 +330,11 @@ h2.card_text {
 
 .duze_oczko {
   border: 3px solid gray;
-  width: 30%;
+  width: 35%;
   height: 23%;
   border-radius: 50%;
   top: 100px;
-  left: calc(50% - 55px);
+  left: calc(50% - 61px);
   background-color: white;
   position: absolute; /* dopytac o position czemu jak usatwie absolute to pozycjonuje od .oczko*/
 }
@@ -339,7 +353,7 @@ h2.card_text {
   position: absolute;
   font-size: 12px;
   top: 7px;
-  right: 9px;
+  right: 18px;
 }
 
 .duze_oczko p::after {
@@ -347,7 +361,7 @@ h2.card_text {
   position: absolute;
   font-size: 12px;
   top: 50px;
-  right: 15px;
+  right: 25px;
 }
 
 .card_description {
@@ -369,8 +383,8 @@ h2.card_text {
 .card1_button {
   width: 120px;
   position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
-  top: 420px;
-  left: calc(50% - 25%);
+  top: 430px;
+  left: calc(50% - 18%);
 }
 
 .card input {
@@ -401,13 +415,17 @@ h2.card_text {
 .card2_button {
   width: 120px;
   position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
-  top: 420px;
-  left: calc(50% - 25%);
+  top: 430px;
+  left: calc(50% - 18%);
 }
 
 .card2_button input {
   background-color: white;
   color: #26c6b0;
+}
+
+.card input[type="submit"] {
+  line-height: 20px;
 }
 
 .card2 .duze_oczko p {
@@ -438,7 +456,7 @@ h2.card_text {
   content: "\00221E";
   font-size: 18px;
   top: 2px;
-  right: 5px;
+  right: 12px;
 }
 
 .card3 .card_text {
@@ -457,17 +475,18 @@ h2.card_text {
   display: flex;
   justify-content: space-around;
   margin: 0 30px;
-  height: 300px;
+  height: 350px;
 }
 
 .contact_form {
-  width: 60%;
-  height: 300px;
+  width: 63%;
+  height: 350px;
 }
 
 .contact_graphs {
-  width: 40%;
-  height: 300px;
+  width: 37%;
+  height: 350px;
+  position: relative;
 }
 
 .section4_container h2 {
@@ -476,8 +495,10 @@ h2.card_text {
   display: inline-block;
   padding-right: 231px;
   text-transform: uppercase;
+  padding-bottom: 5px;
 }
-input, textarea {
+input,
+textarea {
   display: block;
   margin-left: 20px;
   margin-top: 15px;
@@ -486,8 +507,123 @@ input, textarea {
   padding: 5px;
   border: 1px solid #26c6b0;
   resize: none;
+  color: white;
 }
 
 input {
-  line-height: 30px;
+  line-height: 45px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: lightgray;
+}
+
+.red_chair {
+  background-image: url(../images/red_chair.png);
+  width: 100%;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -10px;
+  background-size: 55%;
+}
+
+.form_ok {
+  background-image: url(../images/form_ok.jpg);
+  width: 10%;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  border: 1px solid #26c6b0;
+  top: 195px;
+  left: 80px;
+  position: relative;
+}
+
+.form_ok::after {
+  content: "Zgadzam sie na przetwarzanie danych osobowych";
+  float: left; /* dopytac jak konkretnie dziala tutaj float*/
+  width: 255px;
+  padding-left: 57px;
+  font-size: 18px;
+  line-height: 22px;
+  color: lightgray;
+}
+
+.card4_button {
+  position: absolute;
+  top: 260px;
+  left: 79px;
+}
+.card4_button input {
+  width: 315px;
+  height: 60px;
+  font-size: 32px;
+  font-family: "ralewaybold";
+}
+
+.footer_container {
+  height: 50px;
+  margin: 60px 30px 20px 30px;
+  line-height: 50px;
+}
+
+.copyrights {
+  width: 40%;
+  display: inline-block;
+  float: left;
+  padding-left: 20px;
+  color: gray;
+  font-size: 12px;
+}
+
+.footer_graphs {
+  width: 15%;
+  display: flex;
+  float: left;
+  margin-left: 340px;
+  height: 50px;
+}
+
+.flickr,
+.vimeo,
+.pinterest,
+.twitter {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 80%;
+  background-position-x: 0;
+}
+
+.flickr {
+  background-image: url(../images/flickr.png);
+}
+
+.vimeo {
+  background-image: url(../images/vimeo.png);
+}
+
+.pinterest {
+  background-image: url(../images/pinterest.png);
+}
+
+.twitter {
+  background-image: url(../images/twitter.png);
+}
+
+.footer_tittle {
+  width: 10%;
+  display: inline-block;
+  text-align: right;
+  text-transform: uppercase;
+  color: gray;
+  margin-left: 33px;
+}
+
+.footer_tittle span {
+  color: gray;
 }
