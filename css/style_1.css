@@ -31,6 +31,11 @@
 
 body {
   width: 1200px;
+  margin: 0 auto;
+}
+
+.main_width {
+  width: 1200px;
 }
 
 .header_container {
@@ -67,9 +72,9 @@ span {
   position: relative;
 }
 
-/* .menu_list li:first-child {
-    font-family: "ralewaybold";           jak pogrubic tylko nazwy o firmie, galeria, kontakt
-}*/
+.menu_list > li {
+  font-family: "ralewaybold";
+}
 
 .main_info {
   position: absolute;
@@ -90,8 +95,8 @@ span {
   text-transform: capitalize;
 }
 .main_info:before {
-  top: -33px;
-  left: 60px;
+  margin-top: -33px;
+  width: 100%;
   position: absolute;
   content: "\25b2";
   color: black;
@@ -99,11 +104,11 @@ span {
   display: none;
 }
 
-.menu_list:hover .main_info {    /* jak trafic do pierwszego elementu li "o firmie" w klasie menu_list  */
+.menu_list li:first-child:hover .main_info {
   display: block;
 }
 
-.menu_list:hover .main_info:before {
+.menu_list li:first-child:hover .main_info:before {
   display: block;
 }
 
@@ -119,25 +124,18 @@ span {
 .row {
   justify-content: space-between;
   margin-top: 170px;
-  margin-top: 180px;
   display: flex;
   height: 350px;
+  align-items: flex-start;
 }
 
 .section1_unicode {
   width: 4%;
-  margin: 80px 45px;
-  width: 5%;
   margin: 60px 45px;
   text-align: center;
   font-size: 64px;
   color: #26c6b0;
-  height: 350px;
 }
-
-/* .main_image .description {
-  float: left;             czy szlo by jakos floatem ustawic te elementy obok siebie
-} */
 
 .main_image {
   width: 30%;
@@ -197,7 +195,6 @@ input[type="submit"] {
 .first_photo {
   height: 200px;
   background-image: url(../images/box1_img.jpg);
-  /* background-size: contain;    problem z wielkoscia i dopasowaniem zdjecia */
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -205,7 +202,6 @@ input[type="submit"] {
 .second_photo {
   height: 200px;
   background-image: url(../images/box2_img.jpg);
-  /* background-size: contain;    problem z wielkoscia i dopasowaniem zdjecia*/
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -214,7 +210,7 @@ input[type="submit"] {
   height: 230px;
   font-size: 14px;
   border: 1px solid lightgray;
-  margin-right: 30px;
+  margin-right: 33px;
 }
 
 .small_box_description h3 {
@@ -240,18 +236,14 @@ input[type="submit"] {
   margin-top: 130px;
   padding-top: 10px;
   padding-left: 40px;
-  padding-right: 199px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
+  width: 100%;
 }
 
 .first_photo_description h3 {
   text-align: left;
   border-bottom: 8px solid #26c6b0;
-  padding-right: 32px;
+  width: 121px;
 }
-
-/* .h3.onTop { jak zrobic zeby byl tekst nieprzezroczysty na przezroczystym tle
-}  jak sie zrobi background tylko na white i opacity to tekst takze jest przezroczysty */
-
 
 .second_photo_description {
   background-color: rgba(255, 255, 255, 0.5);
@@ -261,12 +253,13 @@ input[type="submit"] {
   margin-top: 130px;
   padding-top: 10px;
   padding-left: 40px;
-  padding-right: 189px; /* .h3.onTop { jak zrobic zeby wypelnienie siegalo do konca*/
+  width: 100%;
 }
 
 .second_photo_description h3 {
   text-align: left;
   border-bottom: 8px solid #26c6b0;
+  width: 131px;
 }
 
 .section3_container {
@@ -314,7 +307,7 @@ input[type="submit"] {
   height: 50%;
   border-radius: 50%;
   background-color: gray;
-  position: absolute; /* dlaczego .kolko jest w srodku .oczko skoro position absolute powinno byc do 1 relative*/
+  position: absolute;
   top: 25%;
   left: 25%;
 }
@@ -338,7 +331,7 @@ h2.card_text {
   top: 100px;
   left: calc(50% - 61px);
   background-color: white;
-  position: absolute; /* dopytac o position czemu jak usatwie absolute to pozycjonuje od .oczko*/
+  position: absolute;
 }
 
 .duze_oczko p {
@@ -384,7 +377,7 @@ h2.card_text {
 
 .card1_button {
   width: 120px;
-  position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
+  position: absolute;
   top: 430px;
   left: calc(50% - 18%);
 }
@@ -393,52 +386,59 @@ h2.card_text {
   width: 120px;
 }
 
-.card2 {
+.card:hover {
   background-color: #26c6b0;
-  z-index: -1;
-  height: 500px;
-  border: none; /* dopytac dlaczego nie kasuje sie border*/
+}
+
+.card:hover .oczko {
+  background-color: #26c6b0;
+  border: 1px solid #26c6b0;
+  color: white;
+}
+
+.card:hover .kolko {
+  background-color: white;
+}
+
+.card:hover h2.card_text {
+  color: white;
+}
+
+.card:hover input[type="submit"] {
+  background-color: white;
+  color: #26c6b0;
+}
+
+.card:hover .duze_oczko {
+  color: #26c6b0;
+  border: none;
+}
+
+.card:hover .duze_oczko p {
+  color: #26c6b0;
 }
 
 .card2 .oczko {
-  border: 3px solid #26c6b0;
-  background-color: #26c6b0;
-}
-
-.card2 .kolko {
+  border: 1px solid gray;
   background-color: white;
 }
 
 .card2 .card_text {
-  color: white;
   left: 72px;
 }
 
 .card2_button {
   width: 120px;
-  position: absolute; /* dopytac o position czemu jak usatwie absolute to nie pozycjonuje od .card(relative)*/
+  position: absolute;
   top: 430px;
   left: calc(50% - 18%);
-}
-
-.card2_button input {
-  background-color: white;
-  color: #26c6b0;
 }
 
 .card input[type="submit"] {
   line-height: 20px;
 }
 
-.card2 .duze_oczko p {
-  color: #26c6b0;
-}
-
-.card2 .duze_oczko {
-  border: 1px solid #26c6b0;
-}
-
-.card2 .card_description {
+.card .card_description {
   margin: 0 2px;
 }
 
@@ -548,7 +548,7 @@ textarea::placeholder {
 
 .form_ok::after {
   content: "Zgadzam sie na przetwarzanie danych osobowych";
-  float: left; /* dopytac jak konkretnie dziala tutaj float*/
+  display: inline-block;
   width: 255px;
   padding-left: 57px;
   font-size: 18px;
@@ -575,7 +575,7 @@ textarea::placeholder {
 }
 
 .copyrights {
-  width: 40%;
+  width: 70%;
   display: inline-block;
   float: left;
   padding-left: 20px;
@@ -584,10 +584,10 @@ textarea::placeholder {
 }
 
 .footer_graphs {
-  width: 15%;
+  width: 13%;
   display: flex;
+  justify-content: flex-end;
   float: left;
-  margin-left: 340px;
   height: 50px;
 }
 
@@ -595,11 +595,10 @@ textarea::placeholder {
 .vimeo,
 .pinterest,
 .twitter {
-  width: 100%;
+  width: 43%;
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 80%;
-  background-position-x: 0;
+  background-size: contain;
 }
 
 .flickr {
@@ -624,7 +623,7 @@ textarea::placeholder {
   text-align: right;
   text-transform: uppercase;
   color: gray;
-  margin-left: 33px;
+  margin-left: 50px;
 }
 
 .footer_tittle span {
